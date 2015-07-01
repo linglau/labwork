@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	<!--http://css-tricks.com/responsive-data-tables/-->
+	<!--Author: Pui-Ling Lau
+	Found on http://www.linglau.com/lab/view/jquery-css-responsive-tables-back-end-integration-multiple-tables-solution
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+<!--[if !IE]><!-->
+<style>
+
+	/* ------- RESPONSIVE TABLE CSS ---------------
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+	@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #d3d3d3; 
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+	}
+	/*END Responsive table CSS*/
+
+</style>
+<!--<![endif]-->
+
+
+<h2>TABLE 1</h2>
+<table>
+	<thead>
+	<tr>
+		<th></th>
+		<th>Registered supporter</th>
+		<th>Affiliate member</th>
+		<th>Member</th>
+		<th>Corporate member</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Access to information and insight</td>
+		<td>Lorem ipsum dolor</td>
+		<td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td>
+	</tr>
+	<tr>
+		<td>Eligible to participate in policy surveys</td>
+		<td>Lorem ipsum dolor</td>
+		<td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td>
+	</tr>
+	<tr>
+		<td>Access to Member Advantages</td>
+		<td>Lorem ipsum dolor</td>
+		<td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td>
+	</tr>
+																																									
+	</tbody>
+</table>
+
+<h2>TABLE 2</h2>
+
+<table>
+	<thead>
+	<tr>
+		<th></th>
+		<th>Registered supporter</th>
+		<th>Affiliate member</th>
+		<th>Member</th>
+		<th>Corporate member</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Access to information and insight</td>
+		<td>Lorem ipsum dolor</td>
+		<td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td>
+	</tr>
+	<tr>
+		<td>Eligible to participate in policy surveys</td>
+		<td>Lorem ipsum dolor</td>
+		<td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td>
+	</tr>
+	<tr>
+		<td>Access to Member Advantages</td>
+		<td>Lorem ipsum dolor</td>
+		<td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td><td>Lorem ipsum dolor</td>
+	</tr>
+																																									
+	</tbody>
+</table>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
