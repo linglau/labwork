@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Pui is a front-end web developer from London.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Speed Reading Javascript - Linglau.com labwork by Pui-Ling Lau</title>
+  <style>
+    html { font-size: 100%; }
+    body { width: 100%; }
+    #wrapper { width: 90%; margin: 0 auto; }
+    .text_center { text-align: center; }
+    #words { display: none; }
+    #display { font-size: 4em; }
+    #testInput { text-align: center; font-size: 1.5em; }
+    @media only screen and (max-width: 600px) {
+       #display { font-size: 1.8em; }
+    }
+  </style>
+    <!--<script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25508098-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>-->
+
+</head>
+<body>
+<div id="wrapper">
+  <!--Known issues: Need to stop it looping when it reaches end of text. Need to sort out punctuation issue-->
+  <a href="http://www.linglau.com">< Go back to Linglau.com</a>
+  <h1 class="text_center">Speed Reading Javascript - Linglau.com labwork</h1>
+  <div id="words">IT is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife. 
+
+  However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered as the rightful property of some one or other of their daughters.
+
+  "My dear Mr. Bennet," said his lady to him one day, "have you heard that Netherfield Park is let at last?"
+
+  Mr. Bennet replied that he had not.
+
+  "But it is," returned she; "for Mrs. Long has just been here, and she told me all about it."
+
+  Mr. Bennet made no answer.
+
+  "Do not you want to know who has taken it?" cried his wife impatiently.
+
+  "You want to tell me, and I have no objection to hearing it."
+
+  This was invitation enough.
+
+  "Why, my dear, you must know, Mrs. Long says that Netherfield is taken by a young man of large fortune from the north of England; that he came down on Monday in a chaise and four to see the place, and was so much delighted with it that he agreed with Mr. Morris immediately; that he is to take possession before Michaelmas, and some of his servants are to be in the house by the end of next week."
+
+  "What is his name?"
+
+  "Bingley."
+
+  "Is he married or single?"
+
+  "Oh! single, my dear, to be sure! A single man of large fortune; four or five thousand a year. What a fine thing for our girls!"
+
+  "How so? how can it affect them?"
+
+  "My dear Mr. Bennet," replied his wife, "how can you be so tiresome! You must know that I am thinking of his marrying one of them."
+
+  "Is that his design in settling here?"
+
+  "Design! nonsense, how can you talk so! But it is very likely that he may fall in love with one of them, and therefore you must visit him as soon as he comes."
+
+  "I see no occasion for that. You and the girls may go, or you may send them by themselves, which perhaps will be still better; for, as you are as handsome as any of them, Mr. Bingley might like you the best of the party."
+
+  "My dear, you flatter me. I certainly have had my share of beauty, but I do not pretend to be any thing extraordinary now. When a woman has five grown up daughters, she ought to give over thinking of her own beauty."
+
+  "In such cases, a woman has not often much beauty to think of."
+
+  "But, my dear, you must indeed go and see Mr. Bingley when he comes into the neighbourhood."
+
+  "It is more than I engage for, I assure you."
+
+  "But consider your daughters. Only think what an establishment it would be for one of them. Sir William and Lady Lucas are determined to go, merely on that account, for in general, you know they visit no new comers. Indeed you must go, for it will be impossible for us to visit him, if you do not."
+
+  "You are over-scrupulous, surely. I dare say Mr. Bingley will be very glad to see you; and I will send a few lines by you to assure him of my hearty consent to his marrying which ever he chuses of the girls; though I must throw in a good word for my little Lizzy."
+
+  "I desire you will do no such thing. Lizzy is not a bit better than the others; and I am sure she is not half so handsome as Jane, nor half so good humoured as Lydia. But you are always giving her the preference."
+
+  "They have none of them much to recommend them," replied he; "they are all silly and ignorant like other girls; but Lizzy has something more of quickness than her sisters."
+
+  "Mr. Bennet, how can you abuse your own children in such way? You take delight in vexing me. You have no compassion on my poor nerves."
+
+  "You mistake me, my dear. I have a high respect for your nerves. They are my old friends. I have heard you mention them with consideration these twenty years at least."
+
+  "Ah! you do not know what I suffer."
+
+  "But I hope you will get over it, and live to see many young men of four thousand a year come into the neighbourhood."
+
+  "It will be no use to us if twenty such should come, since you will not visit them."
+
+  "Depend upon it, my dear, that when there are twenty I will visit them all."
+
+  Mr. Bennet was so odd a mixture of quick parts, sarcastic humour, reserve, and caprice, that the experience of three and twenty years had been insufficient to make his wife understand his character. Her mind was less difficult to develope. She was a woman of mean understanding, little information, and uncertain temper. When she was discontented, she fancied herself nervous. The business of her life was to get her daughters married; its solace was visiting and news.
+  </div>
+
+  <br><br>
+  <div id="testInput">
+    <label for="wpm">Enter Words per Minute speed:</label><br><br>
+    <input type="text" id="inputValue" name="wpm">
+    <input type="submit" id="submit" value="Submit">
+    <input type="submit" id="stop" value="Stop">
+    <br><br><br><br>
+    <div id="display"></div>
+  </div>
+  <br><br><br>
+</div>
+<script>
+
+//Speed reader
+
+//Began 25th Feb 2015
+//Edited 1st July 2015
+
+var submit = document.querySelector('#submit'),
+  stop = document.querySelector('#stop'),
+  input = document.querySelector('#inputValue'),
+  divDisplay = document.getElementById('display'),
+  str = divDisplay.innerHTML,
+  timer,
+  words = document.getElementById("words").innerHTML,
+  arrayWords = [];
+
+var speedreader = (function(){
+  var iterateArrayWithDelay = function(arr, delay, fn) { 
+    //Function to delay iterations in array
+    window.clearTimeout(timer);
+    var index = 0;
+
+    function next() {
+        // protect against empty array
+        if (!arr.length) {
+            return;
+        }
+        // see if we need to wrap the index
+        if (index >= arr.length) {
+            index = 0;
+        }
+        // call the callback
+        if (fn(arr[index], arr, index) === false) {
+            // stop iterating
+            return;
+        }
+             
+        ++index;
+      
+        // schedule next iteration
+        timer = setTimeout(next, delay);
+       
+    }
+    // start the iteration
+    next();
+  },
+  swapWordFunction = function(item, array, i){
+    //Swap words in the array
+     str = divDisplay.innerHTML.replace(str, arrayWords[i]);
+     divDisplay.innerHTML = str;   
+  },
+  inputSubmit = function(){
+    //Checking input value
+    if(input.value.length !== 0) {
+      
+      var valInput = input.value,
+      wordsPerMinute = valInput,
+      wordsPerSecond = wordsPerMinute/60,
+      milliSecondsPerWord = (1/wordsPerSecond)*1000;
+      //console.log("inputValue "+valInput);
+
+      //How to get .text() in pure javascript.
+      document.getElementById("words").innerHTML = words.replace(/<[^>]*>/g, "");
+
+      //Splitting the words into an array
+      arrayWords = words.split(' ');
+    
+      //console.log("milliseconds "+milliSecondsPerWord);
+    
+      iterateArrayWithDelay(arrayWords, milliSecondsPerWord, swapWordFunction);
+      
+    } else {
+      console.log('empty input');
+      //validation message
+    }
+  },
+  init = function(){
+    submit.addEventListener("click", inputSubmit);
+    stop.addEventListener('click', function(){ 
+      window.clearTimeout(timer);
+      divDisplay.innerHTML = "";
+    });
+  };
+  return {
+      init: init
+  };
+
+}());
+
+(function() {
+    speedreader.init();
+})();
+</script>
+
+</body>
+</html>
