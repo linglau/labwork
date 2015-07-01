@@ -1,0 +1,10 @@
+    html { font-size: 100%; }
+    body { width: 100%; }
+    #wrapper { width: 90%; margin: 0 auto; }
+    .text_center { text-align: center; }
+    #words { display: none; }
+    #display { font-size: 4em; }
+    #testInput { text-align: center; font-size: 1.5em; }
+    @media only screen and (max-width: 600px) {
+       #display { font-size: 1.8em; }
+    }
