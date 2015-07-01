@@ -17,7 +17,7 @@ var speedreader = (function(){
     //Function to delay iterations in array
     window.clearTimeout(timer);
     var index = 0;
-
+ 
     function next() {
         // protect against empty array
         if (!arr.length) {
