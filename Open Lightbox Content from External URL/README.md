@@ -2,7 +2,7 @@ Opening lightbox contents from external URL
 
 The problem is that I want to supply my client with a URL as so:
 
-www.site.com/page/#titleOfLightbox
+/page/#titleOfLightbox
 
 And I want it to automatically open up the lightbox when users go to that URL.
 
