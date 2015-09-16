@@ -2,4 +2,4 @@ Javascript - Accordion
 
 An accordion function written in pure Javascript.
 
-Demo: 
+Demo: http://www.linglau.com/labwork/accordionJS/
