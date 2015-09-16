@@ -1,0 +1,4 @@
+.accordionHeader { cursor: pointer; }
+.accordionPanel .accordionContent { display: none; }
+.open .accordionContent { display: block !important; }
+.closed .accordionContent { display: none; }
